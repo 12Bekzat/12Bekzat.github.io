@@ -1,0 +1,27 @@
+<span th:fragment="head">
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/67f1b492e2.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+        <script type="text/javascript">
+            google.maps.event.addDomListener(window, 'load', init);
+
+            function init() {
+              var mapOptions = {
+                zoom: 11,
+                center: new google.maps.LatLng(43.21961806647379, 76.85558106025584),
+                styles: [{"featureType":"all","elementType":"labels.text","stylers":[{"color":"#878787"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f9f5ed"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"color":"#f5f5f5"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#c9c9c9"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#aee0f4"}]}]
+              };
+              var mapElement = document.getElementById('map');
+              var map = new google.maps.Map(mapElement, mapOptions);
+              var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(43.21961806647379, 76.85558106025584),
+                map: map,
+              });
+            }
+        </script>
+</span>
